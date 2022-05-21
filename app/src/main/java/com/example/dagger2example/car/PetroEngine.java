@@ -8,10 +8,17 @@ import javax.inject.Named;
 public class PetroEngine implements Engine {
     private static final String TAG = "Car";
     private int horsePower;
+    private int engineCapacity;
 
     @Inject
-    public PetroEngine(@Named("horsePower") int horsePower) {
+    public PetroEngine( @Named("horse power") int horsePower, @Named("engine capacity")int engineCapacity) {
         this.horsePower = horsePower;
-        Log.d(TAG, "Petro Engine started... and Horsepower is " + String.valueOf(horsePower));
+        this.engineCapacity = engineCapacity;
+        Log.d(TAG, "Petro Engine started... and Horsepower is " +
+                String.valueOf(horsePower) +
+                " and Engine Capacity is " +
+                String.valueOf(engineCapacity)
+
+        );
     }
 }

@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.dagger2example.car.Car;
-import com.example.dagger2example.dagger.DieselEngineModule;
 import com.example.dagger2example.dagger.CarComponent;
 import com.example.dagger2example.dagger.DaggerCarComponent;
-import com.example.dagger2example.dagger.PetroEngineModule;
 
 import javax.inject.Inject;
 
@@ -24,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
         //carModule이 죽은 이유????
         CarComponent component = DaggerCarComponent.builder()
                 //DieselEngineModule을 넣었다. 잘봐라.
-                .petroEngineModule(new PetroEngineModule(350))
+                .horsePower(450)
+                .engineCapacity(1400)
                         .build();
 
         //car = component.getCar();
